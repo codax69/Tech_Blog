@@ -110,18 +110,19 @@ svg {
 }
 
 .skip-link {
-    position: fixed;
-    top: 8px;
+    position: absolute;
+    top: -9999px;
     left: 8px;
     z-index: 300;
-    transform: translateY(-150%);
     padding: 10px 14px;
     background: var(--ink);
     color: var(--paper);
 }
 
 .skip-link:focus {
-    transform: translateY(0);
+    position: fixed;
+    top: 8px;
+    transform: none;
 }
 
 .masthead {
@@ -143,26 +144,48 @@ svg {
     gap: 10px;
     width: fit-content;
     text-decoration: none;
-    font-size: 1.08rem;
+    font-size: 1.15rem;
     font-weight: 700;
     letter-spacing: -.03em;
+    line-height: 1;
+    color: var(--ink);
+    transition: opacity 150ms ease;
+}
+
+.wordmark:hover {
+    opacity: .88;
 }
 
 .wordmark__mark {
-    display: grid;
+    display: inline-grid;
     place-items: center;
-    width: 31px;
-    height: 31px;
+    width: 33px;
+    height: 33px;
     background: var(--accent);
     color: #fffefa;
-    font-family: var(--serif);
-    font-size: 1.28rem;
-    font-weight: 600;
-    line-height: 1;
+    border-radius: 7.5px;
+    box-shadow: 0 2px 7px rgba(164, 66, 37, 0.28);
+    flex-shrink: 0;
+    transition: transform 180ms ease;
 }
 
-.wordmark__mark span {
-    color: #efc5a9;
+.wordmark:hover .wordmark__mark {
+    transform: scale(1.05);
+}
+
+.wordmark__mark svg {
+    width: 21px;
+    height: 21px;
+    stroke: #ffffff;
+}
+
+.wordmark__text {
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.wordmark__dot {
+    color: var(--accent);
 }
 
 .masthead__note {
@@ -383,11 +406,14 @@ svg {
     overflow: hidden;
     background: #e8e7dc;
     color: #313a36;
+    border: 1px solid var(--line);
+    border-radius: 6px;
 }
 
 :root[data-theme="dark"] .hero__art {
-    background: #2b302c;
+    background: #232729;
     color: #d9c4a5;
+    border-color: #343a3c;
 }
 
 .hero__art svg {
@@ -406,8 +432,16 @@ svg {
 .hero__art .orbit {
     fill: none;
     stroke: currentColor;
-    stroke-width: 1;
+    stroke-width: 1.1;
     opacity: .55;
+}
+
+.hero__art .diagram-line {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .hero__art .node {
@@ -419,6 +453,7 @@ svg {
 .hero__art text {
     fill: currentColor;
     font: 12px var(--mono);
+    font-weight: 500;
 }
 
 .content-layout {
@@ -489,36 +524,78 @@ svg {
     overflow: hidden;
     background: var(--art-bg, #e8e7dc);
     color: var(--art-ink, #343c37);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.post-card:hover .post-card__art {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+:root[data-theme="dark"] .post-card__art {
+    background: color-mix(in srgb, var(--art-bg) 20%, #1c2022);
+    color: color-mix(in srgb, var(--art-bg) 45%, #ece8de);
+    border-color: #2e3436;
+}
+
+:root[data-theme="dark"] .post-card:hover .post-card__art {
+    border-color: var(--accent);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .post-card__art svg {
     width: 84%;
     height: 84%;
+    transition: transform 240ms ease;
+}
+
+.post-card:hover .post-card__art svg {
+    transform: scale(1.03);
 }
 
 .post-card__art circle,
 .post-card__art path,
 .post-card__art line,
 .post-card__art rect,
-.post-card__art polyline {
+.post-card__art polyline,
+.post-card__art ellipse {
     vector-effect: non-scaling-stroke;
+}
+
+.post-card__art .orbit {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.2;
+    opacity: .55;
 }
 
 .post-card__art .diagram-line {
     fill: none;
     stroke: currentColor;
     stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
+.post-card__art .node,
 .post-card__art .diagram-node {
     fill: var(--accent);
     stroke: var(--art-bg, #e8e7dc);
-    stroke-width: 2;
+    stroke-width: 2.2;
+}
+
+:root[data-theme="dark"] .post-card__art .node,
+:root[data-theme="dark"] .post-card__art .diagram-node {
+    stroke: #1c2022;
 }
 
 .post-card__art text {
     fill: currentColor;
     font: 9px var(--mono);
+    font-weight: 500;
 }
 
 .post-card__category {
@@ -748,11 +825,62 @@ svg {
     margin: 0 0 36px;
     background: var(--art-bg, #e8e7dc);
     color: var(--art-ink, #343c37);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+:root[data-theme="dark"] .article-art {
+    background: color-mix(in srgb, var(--art-bg) 20%, #1c2022);
+    color: color-mix(in srgb, var(--art-bg) 45%, #ece8de);
+    border-color: #2e3436;
 }
 
 .article-art svg {
     height: 83%;
     width: min(70%, 500px);
+}
+
+.article-art circle,
+.article-art path,
+.article-art line,
+.article-art rect,
+.article-art polyline,
+.article-art ellipse {
+    vector-effect: non-scaling-stroke;
+}
+
+.article-art .orbit {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.2;
+    opacity: .55;
+}
+
+.article-art .diagram-line {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.article-art .node,
+.article-art .diagram-node {
+    fill: var(--accent);
+    stroke: var(--art-bg, #e8e7dc);
+    stroke-width: 3;
+}
+
+:root[data-theme="dark"] .article-art .node,
+:root[data-theme="dark"] .article-art .diagram-node {
+    stroke: #1c2022;
+}
+
+.article-art text {
+    fill: currentColor;
+    font: 11px var(--mono);
+    font-weight: 500;
 }
 
 .article-body {
@@ -989,13 +1117,19 @@ svg {
 }
 
 .wordmark--footer {
-    font-size: .9rem;
+    font-size: .95rem;
 }
 
 .wordmark--footer .wordmark__mark {
     width: 27px;
     height: 27px;
-    font-size: 1.1rem;
+    border-radius: 6.5px;
+    box-shadow: none;
+}
+
+.wordmark--footer .wordmark__mark svg {
+    width: 17px;
+    height: 17px;
 }
 
 .site-footer p {
@@ -1185,13 +1319,19 @@ svg {
     }
 
     .wordmark {
-        gap: 7px;
-        font-size: .98rem;
+        gap: 8px;
+        font-size: 1.02rem;
     }
 
     .wordmark__mark {
-        width: 28px;
-        height: 28px;
+        width: 29px;
+        height: 29px;
+        border-radius: 7px;
+    }
+
+    .wordmark__mark svg {
+        width: 18px;
+        height: 18px;
     }
 
     .search-box {
