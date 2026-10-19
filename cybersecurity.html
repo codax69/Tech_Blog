@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Security is not a plugin you purchase—it is a continuous habit of understanding your attack surface, minimizing exposure, and knowing how to recover." />
+    <meta name="theme-color" content="#f7f5ef" />
+    <title>Modern cybersecurity: defense in depth and risk reduction — TechPulse</title>
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("theme");
+          const system = matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+          document.documentElement.dataset.theme =
+            saved && saved !== "system" ? saved : system;
+        } catch {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="masthead">
+      <div class="masthead__inner wrap">
+        <a class="wordmark" href="index.html" aria-label="TechPulse home"
+          ><span class="wordmark__mark" aria-hidden="true"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M3 12h4l2.5-6.5L13.5 19l3-8.5 1.5 1.5H21"
+              /></svg></span
+          ><span class="wordmark__text">TechPulse<span class="wordmark__dot">.</span></span></a
+        >
+        <p class="masthead__note">Technology, made legible.</p>
+        <div class="masthead__tools">
+          <label class="search-box"
+            ><span class="sr-only">Search articles</span
+            ><svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="10.8" cy="10.8" r="6.6"></circle>
+              <path d="m16 16 4.4 4.4"></path></svg
+            ><input
+              id="site-search"
+              type="search"
+              placeholder="Search articles..."
+              autocomplete="off"
+          /></label>
+          <button
+            class="icon-button"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch color theme"
+            title="Switch color theme"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+              ></path>
+            </svg>
+          </button>
+          <button
+            class="icon-button menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <div class="wrap site-nav__inner">
+          <a href="index.html" >Home</a>
+          <a href="index.html#articles" aria-current="page">Articles</a>
+          <a href="about.html" >About</a>
+          <a href="contact.html" >Contact</a>
+          <span class="site-nav__aside"
+            >Notes on what’s next <span aria-hidden="true">↗</span></span
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="wrap page-shell">
+      <div class="article-progress" aria-hidden="true"><span id="progress-fill"></span></div>
+      <article class="article-view" id="article">
+        <div class="article-toolbar">
+          <a class="button button--quiet" href="index.html">← Back to Articles</a>
+        </div>
+        <header class="article-head">
+          <p class="eyebrow">Cybersecurity</p>
+          <h1 id="article-title">Modern cybersecurity: defense in depth and risk reduction</h1>
+          <p class="hero__dek">Security is not a plugin you purchase—it is a continuous habit of understanding your attack surface, minimizing exposure, and knowing how to recover.</p>
+          <div class="hero__meta">
+            <span>By Nikita Patel</span>
+          </div>
+        </header>
+        <figure class="article-hero-wrap">
+          <img class="article-hero-image" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Modern cybersecurity: defense in depth and risk reduction">
+        </figure>
+        <div class="article-body">
+          <p>No system connected to the internet is 100% immune to vulnerabilities. Seasoned security engineers do not design around the illusion of perfection; they design around resilience, defense in depth, and rapid recovery when an incident happens.</p>
+          <section>
+            <h2>Defense in depth: never rely on a single wall</h2>
+            <p>If a burglar can pick your front door lock and immediately access every safe in the house, your security model has failed. Defense in depth means layering protections: strong firewalls, encrypted communication, role-based access control, least-privilege permissions, and hardware multi-factor authentication (MFA). Even if one layer is breached, the others stop lateral movement.</p>
+          </section>
+          <section>
+            <h2>Detection and incident response</h2>
+            <p>Preventing attacks is only half the battle. Detecting anomalous activity—like unusual database dumps at 3 AM or unexpected admin logins from halfway across the world—allows security teams to isolate infected systems before permanent data loss occurs. Regular table-top drills ensure the team knows who to call and how to restore clean backups.</p>
+          </section>
+          <section>
+            <h2>The human element of security</h2>
+            <p>Most enterprise breaches do not originate from cinematic Hollywood hacking tools; they start with a spear-phishing email convincing an employee to click a spoofed login link. Cultivating a supportive security culture where people feel comfortable reporting accidental mistakes makes systems far safer than punishment policies.</p>
+          </section>
+          <section>
+            <h2>Real-World Examples</h2>
+            <ul>
+              <li>Enforcing hardware security keys (FIDO2/WebAuthn) across employee accounts.</li>
+              <li>Automated secret scanners detecting exposed API credentials in git commits.</li>
+              <li>Air-gapped, immutable backup snapshots that ransomware cannot encrypt or overwrite.</li>
+            </ul>
+          </section>
+          <aside class="takeaways">
+            <h2>Key Takeaways</h2>
+            <ul>
+              <li>Adopt defense in depth: multiple defensive layers prevent a single failure from compromising everything.</li>
+              <li>Prepare tested incident response plans and verified offline backups before trouble strikes.</li>
+              <li>Empower people with clear guidance, hardware keys, and password managers to reduce phishing risk.</li>
+            </ul>
+          </aside>
+          <section class="sources">
+            <h2>Recommended References</h2>
+            <ol>
+              <li>National Institute of Standards and Technology. <a href="https://www.nist.gov/cyberframework" target="_blank" rel="noreferrer">NIST Cybersecurity Framework 2.0</a>. NIST.</li>
+              <li>OWASP Foundation. <a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noreferrer">OWASP Top 10 Web Application Security Risks</a>. OWASP.</li>
+              <li>Cybersecurity and Infrastructure Security Agency. <a href="https://www.cisa.gov/stopransomware/ransomware-guide" target="_blank" rel="noreferrer">CISA Ransomware Prevention and Response Guide</a>. CISA.</li>
+            </ol>
+          </section>
+        </div>
+        <nav class="related" aria-label="More articles">
+          <div class="section-heading">
+            <h2>Keep reading</h2>
+            <a class="text-link" href="index.html#articles">All articles <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="related-grid">
+            <a href="artificial-intelligence.html">Artificial intelligence, without the hype and fog <span aria-hidden="true">→</span></a>
+            <a href="machine-learning.html">Machine learning: teaching computers through experience <span aria-hidden="true">→</span></a>
+          </div>
+        </nav>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <a class="wordmark wordmark--footer" href="index.html" aria-label="TechPulse home"
+          ><span class="wordmark__mark" aria-hidden="true"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M3 12h4l2.5-6.5L13.5 19l3-8.5 1.5 1.5H21"
+              /></svg></span
+          ><span class="wordmark__text">TechPulse<span class="wordmark__dot">.</span></span></a
+        >
+        <p>Curious about the systems beneath the surface.</p>
+        <nav aria-label="Footer navigation">
+          <a href="index.html#articles">Articles</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <small>© <span id="year"></span> TechPulse</small>
+      </div>
+    </footer>
+    <button
+      class="back-top icon-button"
+      id="back-top"
+      type="button"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <path d="m6 14 6-6 6 6"></path>
+      </svg>
+    </button>
+  </body>
+</html>

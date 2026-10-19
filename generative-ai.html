@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="From transformer attention mechanisms to diffusion noise reversal, here is how modern generative systems turn prompts into remarkably coherent creations." />
+    <meta name="theme-color" content="#f7f5ef" />
+    <title>Generative AI: how modern models synthesize text, images, and code — TechPulse</title>
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("theme");
+          const system = matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+          document.documentElement.dataset.theme =
+            saved && saved !== "system" ? saved : system;
+        } catch {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="masthead">
+      <div class="masthead__inner wrap">
+        <a class="wordmark" href="index.html" aria-label="TechPulse home"
+          ><span class="wordmark__mark" aria-hidden="true"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M3 12h4l2.5-6.5L13.5 19l3-8.5 1.5 1.5H21"
+              /></svg></span
+          ><span class="wordmark__text">TechPulse<span class="wordmark__dot">.</span></span></a
+        >
+        <p class="masthead__note">Technology, made legible.</p>
+        <div class="masthead__tools">
+          <label class="search-box"
+            ><span class="sr-only">Search articles</span
+            ><svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="10.8" cy="10.8" r="6.6"></circle>
+              <path d="m16 16 4.4 4.4"></path></svg
+            ><input
+              id="site-search"
+              type="search"
+              placeholder="Search articles..."
+              autocomplete="off"
+          /></label>
+          <button
+            class="icon-button"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch color theme"
+            title="Switch color theme"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+              ></path>
+            </svg>
+          </button>
+          <button
+            class="icon-button menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <div class="wrap site-nav__inner">
+          <a href="index.html" >Home</a>
+          <a href="index.html#articles" aria-current="page">Articles</a>
+          <a href="about.html" >About</a>
+          <a href="contact.html" >Contact</a>
+          <span class="site-nav__aside"
+            >Notes on what’s next <span aria-hidden="true">↗</span></span
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="wrap page-shell">
+      <div class="article-progress" aria-hidden="true"><span id="progress-fill"></span></div>
+      <article class="article-view" id="article">
+        <div class="article-toolbar">
+          <a class="button button--quiet" href="index.html">← Back to Articles</a>
+        </div>
+        <header class="article-head">
+          <p class="eyebrow">Generative AI</p>
+          <h1 id="article-title">Generative AI: how modern models synthesize text, images, and code</h1>
+          <p class="hero__dek">From transformer attention mechanisms to diffusion noise reversal, here is how modern generative systems turn prompts into remarkably coherent creations.</p>
+          <div class="hero__meta">
+            <span>By Nikita Patel</span>
+          </div>
+        </header>
+        <figure class="article-hero-wrap">
+          <img class="article-hero-image" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Generative AI: how modern models synthesize text, images, and code">
+        </figure>
+        <div class="article-body">
+          <p>A few years ago, computers could recognize pictures of cats and transcribe audio with decent accuracy. Today, generative models can draft complete essays, generate photorealistic images from textual descriptions, and write working Python functions on command.</p>
+          <section>
+            <h2>Transformers and next-token prediction</h2>
+            <p>Large language models (LLMs) are built on the Transformer architecture introduced in 2017. Their core superpower is self-attention: the ability to understand how every word in a sentence relates to every other word, regardless of how far apart they are. At runtime, the model repeatedly predicts the most mathematically probable next token based on context.</p>
+          </section>
+          <section>
+            <h2>Diffusion models: creating pictures from noise</h2>
+            <p>Image generators like Stable Diffusion and Midjourney work through diffusion. During training, researchers add progressive static noise to an image until it is pure static, and train a neural network to reverse that corruption step-by-step. Given a text prompt, the model starts with random static noise and gradually removes the noise until a sharp image matching your description emerges.</p>
+          </section>
+          <section>
+            <h2>Plausible output vs. factual truth</h2>
+            <p>Because generative models are trained to produce fluent, believable continuations, they can sound completely confident while stating complete falsehoods—a phenomenon known as hallucination. In software engineering and professional writing, treat generative AI as a tireless junior collaborator: fantastic for brainstorming, drafting, and boilerplate, but always requiring a careful human code review before merging.</p>
+          </section>
+          <section>
+            <h2>Real-World Examples</h2>
+            <ul>
+              <li>Pair-programming assistants suggesting test cases and refactoring boilerplate code.</li>
+              <li>Concept artists generating visual mood boards from creative text prompts.</li>
+              <li>Summarizing lengthy technical whitepapers into digestible executive bullet points.</li>
+            </ul>
+          </section>
+          <aside class="takeaways">
+            <h2>Key Takeaways</h2>
+            <ul>
+              <li>Language models use transformer self-attention to predict contextually relevant next tokens.</li>
+              <li>Diffusion models generate images by learning to iteratively clean structured static noise.</li>
+              <li>Never confuse fluency with factual truth; always review and verify generated work.</li>
+            </ul>
+          </aside>
+          <section class="sources">
+            <h2>Recommended References</h2>
+            <ol>
+              <li>Ashish Vaswani et al.. <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">Attention Is All You Need (The Transformer Paper)</a>. Google Research / NeurIPS.</li>
+              <li>Jonathan Ho, Ajay Jain &amp; Pieter Abbeel. <a href="https://arxiv.org/abs/2006.11239" target="_blank" rel="noreferrer">Denoising Diffusion Probabilistic Models</a>. UC Berkeley / NeurIPS.</li>
+              <li>Ian Goodfellow et al.. <a href="https://arxiv.org/abs/1406.2661" target="_blank" rel="noreferrer">Generative Adversarial Nets</a>. Université de Montréal / NeurIPS.</li>
+            </ol>
+          </section>
+        </div>
+        <nav class="related" aria-label="More articles">
+          <div class="section-heading">
+            <h2>Keep reading</h2>
+            <a class="text-link" href="index.html#articles">All articles <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="related-grid">
+            <a href="artificial-intelligence.html">Artificial intelligence, without the hype and fog <span aria-hidden="true">→</span></a>
+            <a href="machine-learning.html">Machine learning: teaching computers through experience <span aria-hidden="true">→</span></a>
+          </div>
+        </nav>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <a class="wordmark wordmark--footer" href="index.html" aria-label="TechPulse home"
+          ><span class="wordmark__mark" aria-hidden="true"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M3 12h4l2.5-6.5L13.5 19l3-8.5 1.5 1.5H21"
+              /></svg></span
+          ><span class="wordmark__text">TechPulse<span class="wordmark__dot">.</span></span></a
+        >
+        <p>Curious about the systems beneath the surface.</p>
+        <nav aria-label="Footer navigation">
+          <a href="index.html#articles">Articles</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <small>© <span id="year"></span> TechPulse</small>
+      </div>
+    </footer>
+    <button
+      class="back-top icon-button"
+      id="back-top"
+      type="button"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <path d="m6 14 6-6 6 6"></path>
+      </svg>
+    </button>
+  </body>
+</html>

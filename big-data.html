@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="When petabytes of information overflow a single machine, distributed systems divide the work, parallelize processing, and stitch results together." />
+    <meta name="theme-color" content="#f7f5ef" />
+    <title>Big data architecture: scaling computation when one machine fails — TechPulse</title>
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("theme");
+          const system = matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+          document.documentElement.dataset.theme =
+            saved && saved !== "system" ? saved : system;
+        } catch {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="masthead">
+      <div class="masthead__inner wrap">
+        <a class="wordmark" href="index.html" aria-label="TechPulse home"
+          ><span class="wordmark__mark" aria-hidden="true"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M3 12h4l2.5-6.5L13.5 19l3-8.5 1.5 1.5H21"
+              /></svg></span
+          ><span class="wordmark__text">TechPulse<span class="wordmark__dot">.</span></span></a
+        >
+        <p class="masthead__note">Technology, made legible.</p>
+        <div class="masthead__tools">
+          <label class="search-box"
+            ><span class="sr-only">Search articles</span
+            ><svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="10.8" cy="10.8" r="6.6"></circle>
+              <path d="m16 16 4.4 4.4"></path></svg
+            ><input
+              id="site-search"
+              type="search"
+              placeholder="Search articles..."
+              autocomplete="off"
+          /></label>
+          <button
+            class="icon-button"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch color theme"
+            title="Switch color theme"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+              ></path>
+            </svg>
+          </button>
+          <button
+            class="icon-button menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <div class="wrap site-nav__inner">
+          <a href="index.html" >Home</a>
+          <a href="index.html#articles" aria-current="page">Articles</a>
+          <a href="about.html" >About</a>
+          <a href="contact.html" >Contact</a>
+          <span class="site-nav__aside"
+            >Notes on what’s next <span aria-hidden="true">↗</span></span
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="wrap page-shell">
+      <div class="article-progress" aria-hidden="true"><span id="progress-fill"></span></div>
+      <article class="article-view" id="article">
+        <div class="article-toolbar">
+          <a class="button button--quiet" href="index.html">← Back to Articles</a>
+        </div>
+        <header class="article-head">
+          <p class="eyebrow">Big Data</p>
+          <h1 id="article-title">Big data architecture: scaling computation when one machine fails</h1>
+          <p class="hero__dek">When petabytes of information overflow a single machine, distributed systems divide the work, parallelize processing, and stitch results together.</p>
+          <div class="hero__meta">
+            <span>By Nikita Patel</span>
+          </div>
+        </header>
+        <figure class="article-hero-wrap">
+          <img class="article-hero-image" src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Big data architecture: scaling computation when one machine fails">
+        </figure>
+        <div class="article-body">
+          <p>You can buy a powerful server with 128 CPU cores and 1TB of RAM. But what happens when your website generates 50TB of clickstream logs every single day? At that scale, single-machine computing breaks down, and distributed data architecture takes over.</p>
+          <section>
+            <h2>Divide and conquer: map, shuffle, reduce</h2>
+            <p>Distributed engines like Apache Spark split huge datasets into thousands of manageable partitions across a cluster of commodity machines. Each worker node performs calculations on its local slice of data simultaneously, then shuffles and aggregates the partial sums. What would have taken 40 hours on one workstation finishes in 8 minutes on a 100-node cluster.</p>
+          </section>
+          <section>
+            <h2>Separating storage from compute</h2>
+            <p>In modern data lakes and warehouses (like S3 paired with Snowflake or BigQuery), storage is decoupled from compute engines. You store petabytes of compressed columnar data cheaply in object storage, and only spin up compute clusters for the exact duration of your analytical queries.</p>
+          </section>
+          <section>
+            <h2>Quality over raw quantity</h2>
+            <p>Having petabytes of messy, unvalidated data full of null values and duplicates doesn&#39;t make an organization smart—it just makes running queries expensive. Data engineering teams invest heavily in automated schema validation, lineage tracking, and deduplication pipelines to make data trustworthy.</p>
+          </section>
+          <section>
+            <h2>Real-World Examples</h2>
+            <ul>
+              <li>Analyzing billions of telemetry events from connected cars to predict part failures.</li>
+              <li>Real-time fraud scoring checking credit card swipes against historical user spending habits.</li>
+              <li>Global weather forecasting models crunching atmospheric sensor readings from satellites.</li>
+            </ul>
+          </section>
+          <aside class="takeaways">
+            <h2>Key Takeaways</h2>
+            <ul>
+              <li>Distributed frameworks partition large calculations across machine clusters to solve scale bottlenecks.</li>
+              <li>Decoupling storage from computation saves costs and provides elastic analytical power.</li>
+              <li>Clean, well-structured data delivers infinitely more value than mountains of uncurated logs.</li>
+            </ul>
+          </aside>
+          <section class="sources">
+            <h2>Recommended References</h2>
+            <ol>
+              <li>Jeffrey Dean &amp; Sanjay Ghemawat. <a href="https://research.google/pubs/mapreduce-simplified-data-processing-on-large-clusters/" target="_blank" rel="noreferrer">MapReduce: Simplified Data Processing on Large Clusters</a>. Google Research.</li>
+              <li>Matei Zaharia et al.. <a href="https://spark.apache.org/docs/latest/" target="_blank" rel="noreferrer">Apache Spark: Unified Engine for Big Data</a>. Apache Software Foundation.</li>
+              <li>Martin Kleppmann. <a href="https://dataintensive.net/" target="_blank" rel="noreferrer">Designing Data-Intensive Applications</a>. O&#39;Reilly Media.</li>
+            </ol>
+          </section>
+        </div>
+        <nav class="related" aria-label="More articles">
+          <div class="section-heading">
+            <h2>Keep reading</h2>
+            <a class="text-link" href="index.html#articles">All articles <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="related-grid">
+            <a href="artificial-intelligence.html">Artificial intelligence, without the hype and fog <span aria-hidden="true">→</span></a>
+            <a href="machine-learning.html">Machine learning: teaching computers through experience <span aria-hidden="true">→</span></a>
+          </div>
+        </nav>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <a class="wordmark wordmark--footer" href="index.html" aria-label="TechPulse home"
+          ><span class="wordmark__mark" aria-hidden="true"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M3 12h4l2.5-6.5L13.5 19l3-8.5 1.5 1.5H21"
+              /></svg></span
+          ><span class="wordmark__text">TechPulse<span class="wordmark__dot">.</span></span></a
+        >
+        <p>Curious about the systems beneath the surface.</p>
+        <nav aria-label="Footer navigation">
+          <a href="index.html#articles">Articles</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <small>© <span id="year"></span> TechPulse</small>
+      </div>
+    </footer>
+    <button
+      class="back-top icon-button"
+      id="back-top"
+      type="button"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <path d="m6 14 6-6 6 6"></path>
+      </svg>
+    </button>
+  </body>
+</html>

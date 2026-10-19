@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Cutting through marketing buzz to understand what decentralized protocols, verifiable credentials, and self-custody actually mean for internet architecture." />
+    <meta name="theme-color" content="#f7f5ef" />
+    <title>Web 3.0 dissected: semantic web, decentralized ID, and ownership — TechPulse</title>
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("theme");
+          const system = matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+          document.documentElement.dataset.theme =
+            saved && saved !== "system" ? saved : system;
+        } catch {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="masthead">
+      <div class="masthead__inner wrap">
+        <a class="wordmark" href="index.html" aria-label="TechPulse home"
+          ><span class="wordmark__mark" aria-hidden="true"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M3 12h4l2.5-6.5L13.5 19l3-8.5 1.5 1.5H21"
+              /></svg></span
+          ><span class="wordmark__text">TechPulse<span class="wordmark__dot">.</span></span></a
+        >
+        <p class="masthead__note">Technology, made legible.</p>
+        <div class="masthead__tools">
+          <label class="search-box"
+            ><span class="sr-only">Search articles</span
+            ><svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="10.8" cy="10.8" r="6.6"></circle>
+              <path d="m16 16 4.4 4.4"></path></svg
+            ><input
+              id="site-search"
+              type="search"
+              placeholder="Search articles..."
+              autocomplete="off"
+          /></label>
+          <button
+            class="icon-button"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch color theme"
+            title="Switch color theme"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+              ></path>
+            </svg>
+          </button>
+          <button
+            class="icon-button menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <div class="wrap site-nav__inner">
+          <a href="index.html" >Home</a>
+          <a href="index.html#articles" aria-current="page">Articles</a>
+          <a href="about.html" >About</a>
+          <a href="contact.html" >Contact</a>
+          <span class="site-nav__aside"
+            >Notes on what’s next <span aria-hidden="true">↗</span></span
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="wrap page-shell">
+      <div class="article-progress" aria-hidden="true"><span id="progress-fill"></span></div>
+      <article class="article-view" id="article">
+        <div class="article-toolbar">
+          <a class="button button--quiet" href="index.html">← Back to Articles</a>
+        </div>
+        <header class="article-head">
+          <p class="eyebrow">Web 3.0</p>
+          <h1 id="article-title">Web 3.0 dissected: semantic web, decentralized ID, and ownership</h1>
+          <p class="hero__dek">Cutting through marketing buzz to understand what decentralized protocols, verifiable credentials, and self-custody actually mean for internet architecture.</p>
+          <div class="hero__meta">
+            <span>By Nikita Patel</span>
+          </div>
+        </header>
+        <figure class="article-hero-wrap">
+          <img class="article-hero-image" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Web 3.0 dissected: semantic web, decentralized ID, and ownership">
+        </figure>
+        <div class="article-body">
+          <p>Web 1.0 gave us static read-only websites. Web 2.0 brought interactive social platforms, but concentrated user data and identity inside a handful of centralized tech giants. Web 3.0 is an evolving umbrella of ideas seeking to give users portable identity, cryptographic ownership, and open protocols.</p>
+          <section>
+            <h2>Decentralized identifiers (DIDs) and verifiable credentials</h2>
+            <p>Today, when you click &#39;Log in with Google&#39; or &#39;Log in with Apple&#39;, the tech giant controls your digital identity. If they disable your account, you lose access to third-party services. W3C standards for Decentralized Identifiers (DIDs) use public-key cryptography to give users portable credentials that no single corporation can revoke.</p>
+          </section>
+          <section>
+            <h2>Smart contracts and programmable web services</h2>
+            <p>Instead of interacting with proprietary APIs hosted on private servers, decentralized applications (dApps) execute logic on public, verifiable networks. This allows financial contracts, digital registries, and community governance tools to run transparently without relying on an intermediary company to stay solvent.</p>
+          </section>
+          <section>
+            <h2>The practical tradeoffs: UX and centralization traps</h2>
+            <p>Decentralization comes with steep challenges: remembering private keys with zero password resets, paying network gas fees, and slower throughput. Ironically, many users end up relying on centralized gateways like Discord and Infura, reintroducing the very centralization Web 3 was designed to prevent. Balancing usability with true decentralization remains an active engineering frontier.</p>
+          </section>
+          <section>
+            <h2>Real-World Examples</h2>
+            <ul>
+              <li>Signing into community forums with an Ethereum or Solana wallet rather than an email/password.</li>
+              <li>Digital university diplomas verified cryptographically without contacting the registrar.</li>
+              <li>Decentralized file storage systems (IPFS) distributing document chunks across peer networks.</li>
+            </ul>
+          </section>
+          <aside class="takeaways">
+            <h2>Key Takeaways</h2>
+            <ul>
+              <li>Web 3 explores portable identity and user ownership via cryptographic protocols.</li>
+              <li>W3C standards like DIDs and Verifiable Credentials enable platform-independent authentication.</li>
+              <li>Decentralized systems must prioritize user experience and avoid stealth re-centralization.</li>
+            </ul>
+          </aside>
+          <section class="sources">
+            <h2>Recommended References</h2>
+            <ol>
+              <li>W3C Credentials Community Group. <a href="https://www.w3.org/TR/did-1.0/" target="_blank" rel="noreferrer">W3C Decentralized Identifiers (DIDs) v1.0 Recommendation</a>. World Wide Web Consortium.</li>
+              <li>W3C Working Group. <a href="https://www.w3.org/TR/vc-data-model-2.0/" target="_blank" rel="noreferrer">Verifiable Credentials Data Model v2.0</a>. W3C.</li>
+              <li>Tim Berners-Lee, James Hendler &amp; Ora Lassila. <a href="https://www.scientificamerican.com/article/the-semantic-web/" target="_blank" rel="noreferrer">The Original Semantic Web Vision</a>. Scientific American.</li>
+            </ol>
+          </section>
+        </div>
+        <nav class="related" aria-label="More articles">
+          <div class="section-heading">
+            <h2>Keep reading</h2>
+            <a class="text-link" href="index.html#articles">All articles <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="related-grid">
+            <a href="artificial-intelligence.html">Artificial intelligence, without the hype and fog <span aria-hidden="true">→</span></a>
+            <a href="machine-learning.html">Machine learning: teaching computers through experience <span aria-hidden="true">→</span></a>
+          </div>
+        </nav>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <a class="wordmark wordmark--footer" href="index.html" aria-label="TechPulse home"
+          ><span class="wordmark__mark" aria-hidden="true"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M3 12h4l2.5-6.5L13.5 19l3-8.5 1.5 1.5H21"
+              /></svg></span
+          ><span class="wordmark__text">TechPulse<span class="wordmark__dot">.</span></span></a
+        >
+        <p>Curious about the systems beneath the surface.</p>
+        <nav aria-label="Footer navigation">
+          <a href="index.html#articles">Articles</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <small>© <span id="year"></span> TechPulse</small>
+      </div>
+    </footer>
+    <button
+      class="back-top icon-button"
+      id="back-top"
+      type="button"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <path d="m6 14 6-6 6 6"></path>
+      </svg>
+    </button>
+  </body>
+</html>

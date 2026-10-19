@@ -429,44 +429,6 @@ svg {
     font-size: .85rem;
 }
 
-.filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 0 0 20px;
-}
-
-.filter-chip {
-    min-height: 36px;
-    padding: 6px 14px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    color: var(--muted);
-    background: transparent;
-    cursor: pointer;
-    font-size: .78rem;
-    font-weight: 500;
-    transition: all 160ms ease;
-}
-
-.filter-chip:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
-.filter-chip[aria-pressed="true"] {
-    border-color: var(--ink);
-    color: var(--paper);
-    background: var(--ink);
-}
-
-.results-line {
-    min-height: 22px;
-    margin: -10px 0 16px;
-    color: var(--muted);
-    font-size: .78rem;
-}
-
 .post-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

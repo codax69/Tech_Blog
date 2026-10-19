@@ -14,7 +14,7 @@
       content="Careful introductions to the systems changing our world."
     />
     <meta property="og:type" content="website" />
-    <title>TechPulse — technology, made legible</title>
+    <title>TechPulse — Technology, Made Legible</title>
     <script>
       (() => {
         try {
@@ -35,7 +35,6 @@
     />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="js/data/posts.js" defer></script>
     <script src="js/app.js" defer></script>
   </head>
 
@@ -68,7 +67,7 @@
             ><input
               id="site-search"
               type="search"
-              placeholder="Search the journal"
+              placeholder="Search articles..."
               autocomplete="off"
           /></label>
           <button
@@ -101,10 +100,10 @@
       </div>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <div class="wrap site-nav__inner">
-          <a href="index.html" data-nav="home">Home</a>
-          <a href="?view=articles" data-nav="articles">Articles</a>
-          <a href="?view=about" data-nav="about">About</a>
-          <a href="?view=contact" data-nav="contact">Contact</a>
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="index.html#articles" >Articles</a>
+          <a href="about.html" >About</a>
+          <a href="contact.html" >Contact</a>
           <span class="site-nav__aside"
             >Notes on what’s next <span aria-hidden="true">↗</span></span
           >
@@ -113,7 +112,134 @@
     </header>
 
     <main id="main" class="wrap page-shell">
-      <div id="page-content" aria-live="polite"></div>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <p class="eyebrow">TechPulse Journal</p>
+          <h1 id="hero-title">Demystifying the tech shaping our future.</h1>
+          <p class="hero__dek">Clear, thoughtful explainers written by humans for humans. No buzzword fog, just practical insight into how modern systems actually work.</p>
+          <div class="hero__meta">
+            <span>10 Deep Dives</span>
+            <span>Real-world Insights</span>
+            <span>Curated Resources</span>
+          </div>
+          <a class="text-link" href="generative-ai.html">Featured read: Generative AI <span aria-hidden="true">→</span></a>
+        </div>
+        <figure class="hero__image-wrap">
+          <img class="hero__image" src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="Modern computer motherboard and circuits" loading="eager">
+          <figcaption>Exploring the architecture behind modern digital systems</figcaption>
+        </figure>
+      </section>
+
+      <section class="main-column" id="articles" aria-labelledby="articles-heading">
+        <div class="section-heading">
+          <div>
+            <h2 id="articles-heading">Explore Articles</h2>
+          </div>
+          <p>Curated guides on modern tech topics.</p>
+        </div>
+        <div class="post-grid" id="post-grid">
+        <article class="post-card" data-post="artificial-intelligence" data-category="Artificial Intelligence" data-search="artificial intelligence, without the hype and fog artificial intelligence ai algorithms software">
+          <a class="post-card__thumb-link" href="artificial-intelligence.html" tabindex="-1" aria-hidden="true">
+            <img class="post-card__thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Artificial intelligence, without the hype and fog" loading="lazy">
+          </a>
+          <div class="post-card__content">
+            <span class="post-card__category">Artificial Intelligence</span>
+            <h3><a href="artificial-intelligence.html">Artificial intelligence, without the hype and fog</a></h3>
+            <p class="post-card__excerpt">A grounded, practical look at how AI actually works: finding patterns, making decisions, and solving tasks that used to require human judgment.</p>
+          </div>
+        </article>
+        <article class="post-card" data-post="machine-learning" data-category="Machine Learning" data-search="machine learning: teaching computers through experience machine learning data models training">
+          <a class="post-card__thumb-link" href="machine-learning.html" tabindex="-1" aria-hidden="true">
+            <img class="post-card__thumb" src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Machine learning: teaching computers through experience" loading="lazy">
+          </a>
+          <div class="post-card__content">
+            <span class="post-card__category">Machine Learning</span>
+            <h3><a href="machine-learning.html">Machine learning: teaching computers through experience</a></h3>
+            <p class="post-card__excerpt">Instead of writing every step by hand, machine learning lets computers discover patterns from data. Here is how training and predictions really work.</p>
+          </div>
+        </article>
+        <article class="post-card" data-post="cloud-computing" data-category="Cloud Computing" data-search="cloud computing: building on modern infrastructure cloud computing infrastructure devops scalability">
+          <a class="post-card__thumb-link" href="cloud-computing.html" tabindex="-1" aria-hidden="true">
+            <img class="post-card__thumb" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Cloud computing: building on modern infrastructure" loading="lazy">
+          </a>
+          <div class="post-card__content">
+            <span class="post-card__category">Cloud Computing</span>
+            <h3><a href="cloud-computing.html">Cloud computing: building on modern infrastructure</a></h3>
+            <p class="post-card__excerpt">The cloud is not an invisible mystery. It is millions of high-performance servers, managed via code and APIs, transforming how applications scale.</p>
+          </div>
+        </article>
+        <article class="post-card" data-post="internet-of-things" data-category="Internet of Things" data-search="the internet of things: bridging physical and digital worlds internet of things hardware sensors embedded">
+          <a class="post-card__thumb-link" href="internet-of-things.html" tabindex="-1" aria-hidden="true">
+            <img class="post-card__thumb" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="The Internet of Things: bridging physical and digital worlds" loading="lazy">
+          </a>
+          <div class="post-card__content">
+            <span class="post-card__category">Internet of Things</span>
+            <h3><a href="internet-of-things.html">The Internet of Things: bridging physical and digital worlds</a></h3>
+            <p class="post-card__excerpt">From smart thermostats to industrial vibration sensors, IoT turns everyday physical devices into intelligent, networked data collectors.</p>
+          </div>
+        </article>
+        <article class="post-card" data-post="blockchain" data-category="Blockchain" data-search="demystifying blockchain: cryptographic logs and consensus blockchain cryptography networks databases">
+          <a class="post-card__thumb-link" href="blockchain.html" tabindex="-1" aria-hidden="true">
+            <img class="post-card__thumb" src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Demystifying blockchain: cryptographic logs and consensus" loading="lazy">
+          </a>
+          <div class="post-card__content">
+            <span class="post-card__category">Blockchain</span>
+            <h3><a href="blockchain.html">Demystifying blockchain: cryptographic logs and consensus</a></h3>
+            <p class="post-card__excerpt">Strip away the speculative noise: a blockchain is fundamentally an immutable, append-only ledger maintained by a network that agrees without a central referee.</p>
+          </div>
+        </article>
+        <article class="post-card" data-post="cybersecurity" data-category="Cybersecurity" data-search="modern cybersecurity: defense in depth and risk reduction cybersecurity security defense privacy">
+          <a class="post-card__thumb-link" href="cybersecurity.html" tabindex="-1" aria-hidden="true">
+            <img class="post-card__thumb" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Modern cybersecurity: defense in depth and risk reduction" loading="lazy">
+          </a>
+          <div class="post-card__content">
+            <span class="post-card__category">Cybersecurity</span>
+            <h3><a href="cybersecurity.html">Modern cybersecurity: defense in depth and risk reduction</a></h3>
+            <p class="post-card__excerpt">Security is not a plugin you purchase—it is a continuous habit of understanding your attack surface, minimizing exposure, and knowing how to recover.</p>
+          </div>
+        </article>
+        <article class="post-card" data-post="big-data" data-category="Big Data" data-search="big data architecture: scaling computation when one machine fails big data data distributed systems analytics">
+          <a class="post-card__thumb-link" href="big-data.html" tabindex="-1" aria-hidden="true">
+            <img class="post-card__thumb" src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Big data architecture: scaling computation when one machine fails" loading="lazy">
+          </a>
+          <div class="post-card__content">
+            <span class="post-card__category">Big Data</span>
+            <h3><a href="big-data.html">Big data architecture: scaling computation when one machine fails</a></h3>
+            <p class="post-card__excerpt">When petabytes of information overflow a single machine, distributed systems divide the work, parallelize processing, and stitch results together.</p>
+          </div>
+        </article>
+        <article class="post-card" data-post="web3" data-category="Web 3.0" data-search="web 3.0 dissected: semantic web, decentralized id, and ownership web 3.0 web identity decentralization">
+          <a class="post-card__thumb-link" href="web3.html" tabindex="-1" aria-hidden="true">
+            <img class="post-card__thumb" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Web 3.0 dissected: semantic web, decentralized ID, and ownership" loading="lazy">
+          </a>
+          <div class="post-card__content">
+            <span class="post-card__category">Web 3.0</span>
+            <h3><a href="web3.html">Web 3.0 dissected: semantic web, decentralized ID, and ownership</a></h3>
+            <p class="post-card__excerpt">Cutting through marketing buzz to understand what decentralized protocols, verifiable credentials, and self-custody actually mean for internet architecture.</p>
+          </div>
+        </article>
+        <article class="post-card" data-post="quantum-computing" data-category="Quantum Computing" data-search="quantum computing: why qubits change computational physics quantum computing physics quantum future tech">
+          <a class="post-card__thumb-link" href="quantum-computing.html" tabindex="-1" aria-hidden="true">
+            <img class="post-card__thumb" src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Quantum computing: why qubits change computational physics" loading="lazy">
+          </a>
+          <div class="post-card__content">
+            <span class="post-card__category">Quantum Computing</span>
+            <h3><a href="quantum-computing.html">Quantum computing: why qubits change computational physics</a></h3>
+            <p class="post-card__excerpt">Quantum computers are not just faster laptops—they exploit superposition and entanglement to solve specific mathematical problems classical bits can never conquer.</p>
+          </div>
+        </article>
+        <article class="post-card" data-post="generative-ai" data-category="Generative AI" data-search="generative ai: how modern models synthesize text, images, and code generative ai generative ai llms diffusion">
+          <a class="post-card__thumb-link" href="generative-ai.html" tabindex="-1" aria-hidden="true">
+            <img class="post-card__thumb" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Generative AI: how modern models synthesize text, images, and code" loading="lazy">
+          </a>
+          <div class="post-card__content">
+            <span class="post-card__category">Generative AI</span>
+            <h3><a href="generative-ai.html">Generative AI: how modern models synthesize text, images, and code</a></h3>
+            <p class="post-card__excerpt">From transformer attention mechanisms to diffusion noise reversal, here is how modern generative systems turn prompts into remarkably coherent creations.</p>
+          </div>
+        </article>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -135,8 +261,9 @@
         >
         <p>Curious about the systems beneath the surface.</p>
         <nav aria-label="Footer navigation">
-          <a href="?view=articles">Articles</a><a href="?view=about">About</a
-          ><a href="?view=contact">Contact</a>
+          <a href="index.html#articles">Articles</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
         </nav>
         <small>© <span id="year"></span> TechPulse</small>
       </div>
